@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+
+    <!-- tailwindcss elements -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>Edit Organization Profile </title>
+    <link rel="icon" type="image/x-icon" href="../images/crvs-image.png" />
+  </head>
+  <body >
+    <div class="min-h-full">
+      <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+      <div
+        id="sidebar"
+        class="fixed inset-0 z-40 flex hidden"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div
+          class="fixed inset-0 bg-gray-600 bg-opacity-75"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="relative flex w-full max-w-xs flex-1 flex-col bg-crvsblue-700 pt-5 pb-4"
+        >
+          <div class="absolute top-0 right-0 -mr-12 pt-2">
+            <button
+              id="close_sidebar"
+              type="button"
+              class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              <span class="sr-only">Close sidebar</span>
+              <!-- Heroicon name: outline/x -->
+              <svg
+                class="h-6 w-6 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- <div class="flex-shrink-0 flex items-center px-4"></div> -->
+
+          <!--nav bar place-->
+          <section include="navigation.html"></section>
+        </div>
+
+        <div class="w-14 flex-shrink-0" aria-hidden="true">
+          <!-- Dummy element to force sidebar to shrink to fit close icon -->
+        </div>
+      </div>
+
+      <!-- Static sidebar for desktop -->
+      <div class="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+
+        <div
+          class="flex flex-grow flex-col overflow-y-auto bg-crvsblue-700 pt-5 pb-4"
+        >
+          <div
+            class="flex w-full flex-shrink-0 flex-row items-center justify-center space-x-3 px-4"
+          >
+            <image src="../images/crvs-image.png" class="h-10 w-16" />
+            <h class="text-2xl font-bold tracking-widest text-white">MULTI-ID</h>
+          </div>
+
+          <!-- navigation section -->
+          <section include="navigation.html"></section>
+          
+        </div>
+      </div>
+
+      <div class="flex flex-1 flex-col lg:pl-64">
+        <main class="relative min-h-screen flex-1 pb-8">
+          
+          <!-- Header -->
+          <section include="header.html"></section>
+          <nav class="bg-grey-light rounded-md w-full px-6 py-1">
+            <ol class="list-reset flex">
+              <li><a href="./profile.html" class="text-blue-600 hover:text-blue-700">Details</a></li>
+              <li><span class="text-gray-500 mx-2"></span>></li>
+              <li><span class="text-gray-500 mx-2"></span></li>
+              <li class="text-gray-500">Edit Profile</li>
+            </ol>
+          </nav>
+          <!-- Main Content -->
+          <div class="px-6 py-2 ">
+            <div
+              class="flex w-full flex-row items-center border-b-2 border-black py-2 px-2"
+            >
+              <div class="flex flex-row items-center space-x-2">
+                <span class="rounded-full bg-crvsicon-100 px-3 py-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="h-6 w-6 text-crvsicon-900" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                  </svg>
+                  
+                </span>
+
+                <h class="text-xl font-semibold uppercase"
+                  >Edit Organization Profile</h
+                >
+
+              
+              </div>
+            </div>
+<br>
+            <!-- card -->
+
+            
+            <!-- PROFILE DETAILS -->
+
+            
+            <div>
+              <div class="block rounded-lg shadow-lg bg-slate-100  ">
+                <div class="py-3 px-6 border-b border-black">
+                 <h1  class="text-l font-semibold uppercase">Organization Profile Details</h1> 
+                </div>
+                <div class="p-6">
+                
+                  <form>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100  bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="SoftNet Technologies"/>
+                          <label for="floatingInput" class="text-gray-700">Organization Name</label>
+                        </div>
+                      </div>
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100 bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="123456">
+                          <label for="floatingInput" class="text-gray-700">Registration No.</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100 bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="1234567">
+                          <label for="floatingInput" class="text-gray-700">ZRB No.</label>
+                        </div>
+                      </div>
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100  bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="123456">
+                          <label for="floatingInput" class="text-gray-700">TIN No.</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100  bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="Magharibi">
+                          <label for="floatingInput" class="text-gray-700">District</label>
+                        </div>
+                      </div>
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100  bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="Mjini">
+                          <label for="floatingInput" class="text-gray-700">Shehia</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100 bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="SoftNet Technologies">
+                          <label for="floatingInput" class="text-gray-700">House No.</label>
+                        </div>
+                      </div>
+                   
+                    </div>
+                
+                  </form>
+                
+                </div>
+              
+              </div>
+            </div>
+<br>
+            <div >
+              <div class="block rounded-lg shadow-lg bg-slate-100  ">
+                <div class="py-3 px-6 border-b border-gray-300">
+                  <h1  class="text-l font-semibold uppercase">Contact Person Details</h1> 
+                </div>
+                <div class="p-6">
+                  <form>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100  bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="ZAN ID"/>
+                          <label for="floatingInput" class="text-gray-700">ID Type</label>
+                        </div>
+                      </div>
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100 bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="123456">
+                          <label for="floatingInput" class="text-gray-700">ID No.</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100 bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="Ali">
+                          <label for="floatingInput" class="text-gray-700">First Name</label>
+                        </div>
+                      </div>
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100  bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="Bakari">
+                          <label for="floatingInput" class="text-gray-700">Middle Name</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100  bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="Makame">
+                          <label for="floatingInput" class="text-gray-700">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="email" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100  bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="amakame@gmail.com">
+                          <label for="floatingInput" class="text-gray-700">Email</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group mb-6">
+                        <div class="form-floating ">
+                          <input type="text" class="form-control
+                          block
+                          w-full
+                          px-3
+                          py-1.5
+                          text-base
+                          font-normal
+                          text-gray-700
+                          bg-blue-100 bg-clip-padding
+                          border-b border-solid border-blue-600
+                          rounded
+                          shadow-md
+                          transition
+                          ease-in-out
+                          m-0
+                          focus:text-gray-700 focus:bg-white focus:outline-none" id="floatingInput" placeholder="0789678934">
+                          <label for="floatingInput" class="text-gray-700">Phone No.</label>
+                        </div>
+                      </div>
+                   
+                    </div>
+                
+                  </form>
+                  
+                </div>
+              
+              </div>
+
+
+              
+            </div>
+
+
+            </div>
+       
+<br>
+<!-- UPDATE & CANCEL -->
+<div class="flex space-x-2 justify-center">
+  <div>
+    <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Cancel</button>
+    <button type="button" class="inline-block px-6 py-2.5 bg-crvsblue-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-crvsblue-700 hover:shadow-lg focus:bg-crvsblue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Update</button>
+  </div>
+</div>
+<br>      
+<br>      
+<br>      
+<br>  
+          <!-- Footer -->
+          <section include="footer.html"></section>
+        </main>
+        
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      elect+User+type
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- pdf cdn -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+
+    <script src="../js/section.js"></script>
+
+    <!-- scripts for sections -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+    <!-- DevExtreme theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn3.devexpress.com/jslib/21.2.7/css/dx.light.css"
+    />
+
+    <!-- DevExtreme library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn3.devexpress.com/jslib/22.1.3/js/dx.all.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+    ></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.0.0/jspdf.umd.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script> -->
+
+    <!-- <script
+      src="../js/buttonControls.js"
+      type="text/javascript"
+      charset="utf8"
+    ></script> -->
+
+    
+
+    <!-- modal-tailwindcss cnd script -->
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  </body>
+</html>
